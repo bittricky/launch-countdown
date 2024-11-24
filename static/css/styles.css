@@ -7,3 +7,83 @@
   background-image: url("data:image/svg+xml,%3Csvg width='800' height='800' viewBox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.15'%3E%3Ccircle cx='400' cy='400' r='1'/%3E%3Ccircle cx='200' cy='200' r='1'/%3E%3Ccircle cx='600' cy='600' r='1'/%3E%3Ccircle cx='100' cy='300' r='1'/%3E%3Ccircle cx='700' cy='300' r='1'/%3E%3Ccircle cx='300' cy='700' r='1'/%3E%3C/g%3E%3C/svg%3E");
   background-size: cover;
 }
+
+.flip-card {
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: 0 13px 0 0 black;
+  position: relative;
+}
+
+.top-flip,
+.bottom-flip {
+  position: absolute;
+}
+
+.top-flip {
+  transform-origin: bottom;
+  transform: rotateX(0deg);
+  animation: flip-top 0.5s ease-in forwards;
+}
+
+.bottom-flip {
+  bottom: 0;
+  animation: flip-bottom 0.5s ease-out 0.5s;
+  transform-origin: top;
+  transform: rotateX(90deg);
+}
+
+.top,
+.bottom,
+.top-flip,
+.bottom-flip {
+  height: 33px;
+  width: 80px;
+  padding: 21px 16px;
+  @apply text-[#fb6087];
+  overflow: hidden;
+  text-align: center;
+}
+
+.top,
+.top-flip {
+  @apply rounded-t-[5px] border-b-[0.5px] border-black/70 bg-[#2c2c44];
+}
+
+.bottom,
+.bottom-flip {
+  @apply flex justify-center items-end rounded-b-[5px] bg-[#343650] shadow-[inset_0_2px_0_rgba(71,83,115,0.2)];
+}
+
+.title {
+  @apply uppercase font-normal tracking-[1.5px] text-[#8486a9] mt-10 text-[0.8rem];
+}
+
+@keyframes flip-top {
+  to {
+    transform: rotateX(90deg);
+  }
+}
+
+@keyframes flip-bottom {
+  to {
+    transform: rotateX(0deg);
+  }
+}
+
+@media (min-width: 550px) {
+  .flip-card {
+    font-size: 5rem;
+  }
+
+  .top,
+  .bottom,
+  .top-flip,
+  .bottom-flip {
+    height: 80px;
+    width: 150px;
+    padding: 27px 16px;
+  }
+}

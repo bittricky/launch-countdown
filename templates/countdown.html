@@ -12,76 +12,47 @@
   <body
     class="bg-[#1e1f29] min-h-screen flex flex-col items-center justify-center bg-stars relative"
   >
-    <div class="text-center">
+    <main class="w-full flex flex-col items-center justify-center">
       <h1
-        class="text-white text-2xl md:text-3xl tracking-[0.3em] uppercase mb-20"
+        class="text-white text-2xl md:text-3xl tracking-[0.3em] uppercase mb-20 text-center px-4"
       >
         We're launching soon
       </h1>
 
-      <div class="grid grid-cols-4 gap-4 md:gap-8">
-        <div class="flex flex-col items-center">
-          <div
-            class="bg-[#343650] w-20 h-20 md:w-32 md:h-32 rounded-lg shadow-lg flex items-center justify-center mb-4"
-          >
-            <span
-              id="days"
-              class="text-[#fb6087] text-3xl md:text-6xl font-bold"
-              >08</span
-            >
+      <div class="countdown flex gap-4 md:gap-8 text-center">
+        <div class="days">
+          <div class="flip-card">
+            <div class="top">00</div>
+            <div class="bottom">00</div>
           </div>
-          <span class="text-[#8486a9] text-sm uppercase tracking-[0.3em]"
-            >Days</span
-          >
+          <p class="title">Days</p>
         </div>
 
-        <div class="flex flex-col items-center">
-          <div
-            class="bg-[#343650] w-20 h-20 md:w-32 md:h-32 rounded-lg shadow-lg flex items-center justify-center mb-4"
-          >
-            <span
-              id="hours"
-              class="text-[#fb6087] text-3xl md:text-6xl font-bold"
-              >23</span
-            >
+        <div class="hours">
+          <div class="flip-card">
+            <div class="top">00</div>
+            <div class="bottom">00</div>
           </div>
-          <span class="text-[#8486a9] text-sm uppercase tracking-[0.3em]"
-            >Hours</span
-          >
+          <p class="title">Hours</p>
         </div>
 
-        <div class="flex flex-col items-center">
-          <div
-            class="bg-[#343650] w-20 h-20 md:w-32 md:h-32 rounded-lg shadow-lg flex items-center justify-center mb-4"
-          >
-            <span
-              id="minutes"
-              class="text-[#fb6087] text-3xl md:text-6xl font-bold"
-              >55</span
-            >
+        <div class="minutes">
+          <div class="flip-card">
+            <div class="top">00</div>
+            <div class="bottom">00</div>
           </div>
-          <span class="text-[#8486a9] text-sm uppercase tracking-[0.3em]"
-            >Minutes</span
-          >
+          <p class="title">Minutes</p>
         </div>
 
-        <div class="flex flex-col items-center">
-          <div
-            class="bg-[#343650] w-20 h-20 md:w-32 md:h-32 rounded-lg shadow-lg flex items-center justify-center mb-4"
-          >
-            <span
-              id="seconds"
-              class="text-[#fb6087] text-3xl md:text-6xl font-bold"
-              >41</span
-            >
+        <div class="seconds">
+          <div class="flip-card">
+            <div class="top">00</div>
+            <div class="bottom">00</div>
           </div>
-          <span class="text-[#8486a9] text-sm uppercase tracking-[0.3em]"
-            >Seconds</span
-          >
+          <p class="title">Seconds</p>
         </div>
       </div>
-    </div>
-
+    </main>
     <script
       type="module"
       src="{{ url_for('static', filename='js/countdown.js') }}"
