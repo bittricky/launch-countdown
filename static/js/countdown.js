@@ -80,12 +80,13 @@ const FlipCountdown = (() => {
   }
 
   class CountdownTimer {
-    constructor(targetDate) {
+    constructor(targetDate, options = {}) {
       this.validateTargetDate(targetDate);
       this.targetDate = targetDate;
       this.previousTime = null;
       this.isRunning = false;
       this.cards = this.initializeCards();
+      this.onComplete = options.onComplete;
     }
 
     validateTargetDate(date) {
