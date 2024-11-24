@@ -2,11 +2,9 @@
   "name": "launch-countdown",
   "version": "1.0.0",
   "description": "Simple web application for counting down",
-  "main": "tailwind.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "styles:compile": "npx tailwindcss -i ./static/css/styles.css -o ./static/css/output.css --watch"
   },
-  "keywords": [],
   "author": "Mitul Patel",
   "license": "ISC",
   "devDependencies": {
