@@ -12,7 +12,10 @@
   <body
     class="bg-[#1e1f29] min-h-screen flex flex-col items-center justify-center bg-stars relative"
   >
-    <main class="w-full flex flex-col items-center justify-center">
+    <main
+      class="w-full flex flex-col items-center justify-center"
+      data-target-date="{{ target_date }}"
+    >
       <h1
         class="text-white text-2xl md:text-3xl tracking-[0.3em] uppercase mb-20 text-center px-4"
       >
@@ -59,9 +62,28 @@
         Reset Timer
       </a>
     </main>
-    <script
-      type="module"
-      src="{{ url_for('static', filename='js/countdown.js') }}"
-    ></script>
+    <script type="module">
+      import FlipCountdown from "{{ url_for('static', filename='js/countdown.js') }}";
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const mainElement = document.querySelector("main");
+        const targetDateStr = mainElement.dataset.targetDate;
+
+        const countdown = FlipCountdown.create({
+          targetDate: new Date(targetDateStr),
+          onComplete: () => {
+            console.log("Countdown finished!");
+            const h1 = document.querySelector("h1");
+            h1.textContent = "Launch Complete!";
+          },
+        });
+
+        countdown.start();
+
+        window.addEventListener("beforeunload", () => {
+          countdown.stop();
+        });
+      });
+    </script>
   </body>
 </html>
