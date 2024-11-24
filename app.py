@@ -23,8 +23,8 @@ def index():
 @app.route('/countdown')
 def countdown():
     if launch_end_time:
-        remaining_time = launch_end_time - datetime.now()
-        return render_template('countdown.html', remaining_time=remaining_time)
+        target_date_str = launch_end_time.strftime('%Y-%m-%dT%H:%M:%S')
+        return render_template('countdown.html', target_date=target_date_str)
     else:
         return redirect(url_for('index'))
 
