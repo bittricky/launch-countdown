@@ -42,7 +42,7 @@
   height: 33px;
   width: 80px;
   padding: 21px 16px;
-  @apply text-[#fb6087];
+  @apply text-red-600;
   overflow: hidden;
   text-align: center;
 }
