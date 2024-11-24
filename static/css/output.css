@@ -574,6 +574,10 @@ video {
   margin-top: 2rem;
 }
 
+.mt-12 {
+  margin-top: 3rem;
+}
+
 .block {
   display: block;
 }
@@ -679,6 +683,11 @@ video {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .text-center {
@@ -842,6 +851,11 @@ video {
 .hover\:bg-\[\#ff8da9\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 141 169 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-\[\#444864\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(68 72 100 / var(--tw-bg-opacity, 1));
 }
 
 .focus\:border-\[\#fb6087\]:focus {
