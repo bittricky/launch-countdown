@@ -1,6 +1,6 @@
 # Launch Countdown
 
-This is a simple countdown timer web app built using Flask, Tailwind CSS, and JavaScript (ES6). The application allows users to set a time to countdown time.
+This is a simple countdown timer web app built using Flask, Tailwind CSS, and JavaScript (ES6). The application allows users to set a countdown time.
 
 ## Project Directory Structure
 
